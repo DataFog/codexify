@@ -1,0 +1,159 @@
+openapi: '3.0.2'
+info:
+  title: PII Redaction API
+  version: '1.0'
+servers:
+  - url: http://localhost:5000/api
+paths:
+  /process_json:
+    post:
+      summary: Redact PII data from JSON files
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The JSON file to process
+                redaction_method:
+                  type: string
+                  enum: ['fixed_string', 'random_value', 'hash']
+                  default: 'fixed_string'
+                  description: The redaction method to use for PII data
+      responses:
+        '200':
+          description: Successfully redacted JSON file
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  filename:
+                    type: string
+                    description: The filename of the redacted JSON file
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+  /process_text:
+    post:
+      summary: Redact PII data from a text file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The text file to process
+                redaction_method:
+                  type: string
+                  enum: ['fixed_string', 'random_value', 'hash']
+                  default: 'fixed_string'
+                  description: The redaction method to use for PII data
+      responses:
+        '200':
+          description: Successfully redacted text file
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: The redacted text
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+  /process_csv:
+      post:
+        summary: Redact PII data from a CSV file
+        requestBody:
+          required: true
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  file:
+                    type: string
+                    format: binary
+                    description: The CSV file to process
+                  redaction_method:
+                    type: string
+                    enum: ['fixed_string', 'random_value', 'hash']
+                    default: 'fixed_string'
+                    description: The redaction method to use for PII data
+        responses:
+          '200':
+            description: Successfully redacted CSV file
+            content:
+              text/csv:
+                schema:
+                  type: string
+                  description: The redacted CSV
+          '400':
+            description: Bad request
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    error:
+                      type: string
+                      description: Error message
+  /process_excel:
+    post:
+      summary: Redact PII data from an Excel file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The Excel file to process
+                redaction_method:
+                  type: string
+                  enum: ['fixed_string', 'random_value', 'hash']
+                  default: 'fixed_string'
+                  description: The redaction method to use for PII data
+      responses:
+        '200':
+          description: Successfully redacted Excel file
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+                description: The redacted Excel file
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
