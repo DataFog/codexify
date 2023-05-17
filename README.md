@@ -1,16 +1,37 @@
-# Codexify: Identify, Mask & Swap Out Personally Identifying Information (PII)
+# Codexify: Identify, Mask, & Replace Personally Identifying Information (PII)
+
 [![Official Website](https://img.shields.io/badge/Official%20Website-codexify.ai-blue?style=flat&logo=world&logoColor=white)](https://codexify.ai)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Codexify0?style=social)](https://twitter.com/Codexify0)
 [![Slack](https://img.shields.io/badge/slack--channel-blue?logo=slack)](https://join.slack.com/t/codexifyworkspace/shared_invite/zt-1vbs0sulv-aNxrDCQVeCuFqIMSboIboA)
 
+![Logo](https://uploads-ssl.webflow.com/63c04c507596187087b1cfa6/6447f61405d27dfc1f67d300_Color%20logo%20-%20no%20background-p-800.png)
 
 <hr/>
 
-### 🔴 🔴 🔴  THIS PRODUCT IS UNDERGOING REGULAR UPDATES: PLEASE CHECK BELOW FOR LATEST UPDATES 🔴 🔴 🔴
+### 🔴   THIS PRODUCT IS UNDERGOING REGULAR UPDATES: PLEASE CHECK BELOW FOR LATEST UPDATES  🔴
 
 <hr/>
 
-Codexify is an open-source platform that offers state-of-the-art PII detection, masking, and synthetic-data-insertion capabilities for structured data.  With the rise of third party generative AI products, it is more important than ever that companies are able to securely identify, mask, and/or swap-out sensitive information. We use open-source technologies to develop and fine-tune our models to  
+## About
+
+Data privacy and security are top priorities for any organization that deals with sensitive data. Codexify's API provides an easy-to-use solution for data stakeholders to redact sensitive data from CSV, Excel, and JSON files. Our API supports a range of redaction methods, including fixed string, random value, and hash functions, to ensure that sensitive data is removed from the files, while preserving the integrity of the remaining data.
+
+In addition to redaction, Codexify's API also supports synthetic data generation to replace sensitive data with realistic but fake data. This feature can be useful when the sensitive data is needed for testing or development purposes, but cannot be used in its original form due to privacy concerns.
+
+## Use Cases
+### Data Analytics/ETL
+Data analytics professionals working with ETL (Extract, Transform, Load) processes can find Codexify's API useful for redacting sensitive data from CSV, Excel, and JSON files. By using the API to redact and replace sensitive data with dummy data, data analytics professionals can ensure that the data is compliant with data protection regulations and that sensitive data is not accidentally or intentionally included in reports or analyses.
+
+Furthermore, the API's support for synthetic data generation can be useful for testing and development purposes, allowing data analytics professionals to work with realistic but safe data. Overall, Codexify's API is a flexible and customizable solution for data redaction that can be tailored to meet the specific needs of each organization and industry.
+
+### Medical Records/Research
+Codexify has already been shown to  The API can be used to remove personally identifiable information (PII) from medical records and research data, such as patient names, social security numbers, and medical diagnoses, to protect patient privacy and comply with data protection regulations.
+In addition, the API can also be used to generate synthetic medical data for testing and development purposes. This can help to ensure that the data is realistic and representative of real medical data, while protecting patient privacy by replacing sensitive information with dummy data.
+
+### Finance: Parsing Sensitive Documents
+An important use case for data engineers using Codexify's API is within the context of financial organizations that deal with large volumes of sensitive data. The API can be used to redact personally identifiable information (PII) from financial statements and other documents that may contain sensitive information, such as social security numbers, credit card numbers, and bank account details. This can help to reduce the risk of data breaches and ensure compliance with data protection regulations.
+
+### Legal Practices
+Codexify can also be used in legal organizations to redact sensitive information from legal documents, such as contracts, agreements, and court filings. This can help to protect the privacy of individuals involved in legal proceedings and prevent sensitive information from being disclosed publicly.
 
 ## Platforms
 * API (Offline-friendly): download a Docker image and host Codexify on-premise - perfect for users that have rigorous data storage requirements.
@@ -21,9 +42,9 @@ Codexify is an open-source platform that offers state-of-the-art PII detection, 
 
 ## 🚀 Features
 
-* Identify over 60 distinct types of Personally Identifying Information.  See [here](link) for a list of the fields that we currently support.
-* Anonymize, hash, or redact your data
-* Generate synthetic data variants 
+* Identify common PII fields in CSVs and other structured data
+* Anonymize, hash, or redact your sensitive data
+* Generate synthetic data variants and swap them in place of actual damaging information
 
 ### Coming up
 * Enhancing support for generating *100+* types of synthetic data(!!)
@@ -34,18 +55,12 @@ Codexify is an open-source platform that offers state-of-the-art PII detection, 
 * Are we missing anything? Please get in touch! 
 
 ## Quickstart
+We're adding new content daily to help you get set up! If you have questions in the meantime, please feel free to reach out to us on Slack and/or email (sid@codexify.app)
 
-0. Check out the [wiki]()
-1. Get an [API Key](link)
-2. Download the latest [Docker image]()
-3. Follow the [installation instructions][docs/setup]
-4. [Run][docs/usage] the app
-
-Please see the [documentation][docs] for full setup instructions and configuration options.
-
-[docs]: https://docs.codexify.ai/
-
-## Use Cases
+0. Check out the [Open API specs](openapi.yaml)
+1. Download the latest [Docker image](Dockerfile)
+2. Follow the [installation instructions] to host or configure your private instance
+3. Fire up the instance and start protecting your data
 
 
 ## 🛡 Disclaimer
