@@ -7,9 +7,12 @@
 
 <hr/>
 
-### 🔴   THIS PRODUCT IS UNDERGOING REGULAR UPDATES: PLEASE CHECK BELOW FOR LATEST UPDATES  🔴
+### 🔴 THIS PRODUCT IS UNDERGOING REGULAR UPDATES: PLEASE CHECK BELOW FOR LATEST UPDATES  🔴
 
 <hr/>
+## Changelog
+5/17/23: Added notes in wiki
+5/16/23: Initial commit
 
 ## About
 
@@ -26,16 +29,16 @@ Data analytics professionals working with ETL (Extract, Transform, Load) process
 Furthermore, the API's support for synthetic data generation can be useful for testing and development purposes, allowing data analytics professionals to work with realistic but safe data. Overall, Codexify's API is a flexible and customizable solution for data redaction that can be tailored to meet the specific needs of each organization and industry.
 
 ### Medical Records/Research
-Codexify can be used to remove personally identifiable information (PII) from medical records and research data, such as patient names, social security numbers, and medical diagnoses, to protect patient privacy and comply with data protection regulations.
+Codexify can be used to remove personally identifiable information (PII) from medical records and research data, such as patient names, social security numbers, and more, to protect patient privacy and comply with data protection regulations.
 
 ### Financial Documents
-An important use case for data engineers using Codexify's API is within the context of financial organizations that deal with large volumes of sensitive data. The API can be used to redact personally identifiable information (PII) from financial statements and other documents that may contain sensitive information, such as social security numbers, credit card numbers, and bank account details. This can help to reduce the risk of data breaches and ensure compliance with data protection regulations.
+An important use case for data engineers using Codexify's API is within the context of financial organizations that deal with large volumes of sensitive data. The API can be used to redact PII from financial statements and other documents that may contain sensitive information, such as social security numbers, credit card numbers, and bank account details. This can help to reduce the risk of data breaches and ensure compliance with data protection regulations.
 
 ### Legal Briefs
 Codexify can also be used in legal organizations to redact sensitive information from legal documents, such as contracts, agreements, and court filings. This can help to protect the privacy of individuals involved in legal proceedings and prevent sensitive information from being disclosed publicly.
 
 ## Platforms
-* API (Offline-friendly): download a Docker image and host Codexify on-premise - perfect for users that have rigorous data storage requirements.
+* API (Locally hosted): download a Docker image and host Codexify on-premise - perfect for users that have rigorous data storage requirements.
 * SaaS: Our API can also be accessible through a user-friendly interface [here](https://codexify.ai).
 * Managed Services: We offer a range of paid custom services around helping you get up and running quickly. Please get in touch at sid@codexify.app to schedule a consultation. 
 * Hosted Services: Depending on your organization needs, having Codexify live on GCP, AWS, DigitalOcean (and more) might make the most sense.  We offer a range of hosted plans that take care of all of the setup and installation. Contact sid@codexify.app for more information. 
@@ -60,8 +63,9 @@ We're adding new content daily to help you get set up! If you have questions in 
 
 0. Check out the [Open API specs](openapi.yaml)
 1. Download the latest [Docker image](Dockerfile)
-2. Follow the [installation instructions] to host or configure your private instance
-3. Fire up the instance and start protecting your data
+2. Read the [API documentation] (https://github.com/CodexifyAI/codexify/wiki/API-Reference)
+3. Follow the [installation instructions](https://github.com/CodexifyAI/codexify/wiki/Installation-(via-Docker)-Instructions) to host or configure your private instance
+4. Fire up the instance and start protecting your data!
 
 
 ## 🛡 Disclaimer
