@@ -10,9 +10,13 @@
 ### 🔴 PLEASE CHECK CHANGELOG BELOW FOR LATEST UPDATES  🔴
 
 <hr/>
+
 ## Changelog
-5/17/23: Added notes in wiki
-5/16/23: Initial commit
+
+
+*5/17/23: Added notes in wiki
+
+*5/16/23: Initial commit
 
 ## About
 
