@@ -1,7 +1,8 @@
-# Codexify: Identify, Mask & Swap Out Your Personally Identifying Information (PII)
+# Codexify: Identify, Mask & Swap Out Personally Identifying Information (PII)
 [![Official Website](https://img.shields.io/badge/Official%20Website-codexify.ai-blue?style=flat&logo=world&logoColor=white)](https://codexify.ai)
-
 [![Twitter Follow](https://img.shields.io/twitter/follow/Codexify0?style=social)](https://twitter.com/Codexify0)
+[![Slack](https://img.shields.io/badge/slack--channel-blue?logo=slack)](https://join.slack.com/t/codexifyworkspace/shared_invite/zt-1vbs0sulv-aNxrDCQVeCuFqIMSboIboA)
+
 
 <hr/>
 
@@ -9,34 +10,34 @@
 
 <hr/>
 
+Codexify is an open-source platform that offers state-of-the-art PII detection, masking, and synthetic-data-insertion capabilities for structured data.  With the rise of third party generative AI products, it is more important than ever that companies are able to securely identify, mask, and/or swap-out sensitive information. We use open-source technologies to develop and fine-tune our models to  
 
-Codexify is a platform that offers state-of-the-art PII detection, masking, and synthetic-data-insertion capabilities for structured data.  With the rise of third party generative AI products, it is more important than ever that companies are able to securely identify, mask, and/or swap-out sensitive information.  
+## Platforms
+* API (Offline-friendly): download a Docker image and host Codexify on-premise - perfect for users that have rigorous data storage requirements.
+* SaaS: Our API can also be accessible through a user-friendly interface [here](https://codexify.ai).
+* Managed Services: We offer a range of paid custom services around helping you get up and running quickly. Please get in touch at sid@codexify.app to schedule a consultation. 
+* Hosted Services: Depending on your organization needs, having Codexify live on GCP, AWS, DigitalOcean (and more) might make the most sense.  We offer a range of hosted plans that take care of all of the setup and installation. Contact sid@codexify.app for more information. 
 
-Codexify currently exists in a few incarnations:
-- API (Offline): download a Docker image and host Codexify on-premise - perfect for users that have rigorous data storage requirements (looking at you, EU ;) )
-- API (Web): access our API [here](link)
-- SaaS: Our API can also be accessible through a user-friendly interface [here](https://codexify.ai)
-
-Interested in trying it out in a pinch? Click [here](here) to try our demo.  
 
 ## 🚀 Features
 
-- Identify over 60 distinct types of Personally Identifying Information.  See [here](link) for a list of the fields that we currently support.
-- Anonymize, hash, or redact your data
-- Generate synthetic data variants 
+* Identify over 60 distinct types of Personally Identifying Information.  See [here](link) for a list of the fields that we currently support.
+* Anonymize, hash, or redact your data
+* Generate synthetic data variants 
 
 ### Coming up
-- Support for larger file types
-- HDFS support 
-- Differential Privacy controls
-- Data connectors  
-- Are we missing anything? Please get in touch! 
+* Enhancing support for generating *100+* types of synthetic data(!!)
+* Support for larger file types
+* HDFS support 
+* Differential Privacy controls
+* Data connectors  
+* Are we missing anything? Please get in touch! 
 
 ## Quickstart
 
 0. Check out the [wiki]()
 1. Get an [API Key](link)
-2. Download the latest Docker image [Docker image]()
+2. Download the latest [Docker image]()
 3. Follow the [installation instructions][docs/setup]
 4. [Run][docs/usage] the app
 
@@ -44,18 +45,7 @@ Please see the [documentation][docs] for full setup instructions and configurati
 
 [docs]: https://docs.codexify.ai/
 
-## 📖 Documentation
-* [⚙️ Setup][docs/setup]
-* [💻 Usage][docs/usage]
-
-
-[docs/setup]: https://docs.codexify.ai/setup/
-[docs/usage]: https://docs.codexify.ai/usage/
-
-## ⚠️ Limitations
-
-1. Not a polished application or product just yet, we are still in beta mode! 
-2. Making updates on a regular nearly daily basis
+## Use Cases
 
 
 ## 🛡 Disclaimer
@@ -64,12 +54,6 @@ This project, Codexify, is an experimental application and is provided "as-is" w
 
 The developers and contributors of this project do not accept any responsibility or liability for any losses, damages, or other consequences that may occur as a result of using this software. You are solely responsible for any decisions and actions taken based on the information provided by Codexify.
 
-## 🐦 Connect with Us on Twitter
-
-Stay up-to-date with the latest news, updates, and insights about Codexify by following our Twitter account. Engage with the developer and the AI's own account for interesting discussions, project updates, and more.
-- **Product**: Follow [@Codexify0](https://twitter.com/Codexify0) to reach out with any questions, or join our Slack community!
-
-- **Author**: Follow [@sidmohan_0](https://twitter.com/_sidmohan) to reach out with any questions, or join our Slack community!
 
 ## 💁 Connect with Us on Slack
 

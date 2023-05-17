@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+training/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -137,3 +138,4 @@ __azurite_db*__.json
 # miscellaneous files
 *.csv
 *.xlsx
+curl_scripts.md 

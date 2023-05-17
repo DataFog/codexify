@@ -1,13 +1,16 @@
-openapi: '3.0.2'
+openapi: "3.0.0"
 info:
-  title: PII Redaction API
-  version: '1.0'
+  title: Redact API
+  description: An API for redacting sensitive data from CSV, Excel and JSON files
+  version: "1.0.0"
 servers:
-  - url: http://localhost:5000/api
+  - url: <http://localhost:6000/>
 paths:
-  /process_json:
+  /api/process_csv:
     post:
-      summary: Redact PII data from JSON files
+      summary: Process a CSV file and redact sensitive data
+      description: This endpoint allows users to upload a CSV file and specify a redaction method to remove sensitive data from the file. The redacted file can be downloaded in the same format as the original file. The endpoint also supports synthetic data generation to replace sensitive data with realistic but fake data.
+      operationId: processCsvFile
       requestBody:
         required: true
         content:
@@ -18,110 +21,30 @@ paths:
                 file:
                   type: string
                   format: binary
-                  description: The JSON file to process
+                  description: The CSV file to be redacted.
                 redaction_method:
                   type: string
-                  enum: ['fixed_string', 'random_value', 'hash']
-                  default: 'fixed_string'
-                  description: The redaction method to use for PII data
-      responses:
-        '200':
-          description: Successfully redacted JSON file
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  filename:
-                    type: string
-                    description: The filename of the redacted JSON file
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    description: Error message
-  /process_text:
-    post:
-      summary: Redact PII data from a text file
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                file:
+                  enum: [fixed_string, random_value, hash]
+                  description: The method to be used for redacting sensitive data from the file.
+                synthetic_data_generation:
                   type: string
-                  format: binary
-                  description: The text file to process
-                redaction_method:
-                  type: string
-                  enum: ['fixed_string', 'random_value', 'hash']
-                  default: 'fixed_string'
-                  description: The redaction method to use for PII data
+                  enum: [true, false]
+                  description: Whether to generate synthetic data to replace sensitive data in the file.
       responses:
-        '200':
-          description: Successfully redacted text file
+        "200":
+          description: Success
           content:
-            text/plain:
+            text/csv:
               schema:
                 type: string
-                description: The redacted text
-        '400':
+                format: binary
+        "400":
           description: Bad request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    description: Error message
-  /process_csv:
-      post:
-        summary: Redact PII data from a CSV file
-        requestBody:
-          required: true
-          content:
-            multipart/form-data:
-              schema:
-                type: object
-                properties:
-                  file:
-                    type: string
-                    format: binary
-                    description: The CSV file to process
-                  redaction_method:
-                    type: string
-                    enum: ['fixed_string', 'random_value', 'hash']
-                    default: 'fixed_string'
-                    description: The redaction method to use for PII data
-        responses:
-          '200':
-            description: Successfully redacted CSV file
-            content:
-              text/csv:
-                schema:
-                  type: string
-                  description: The redacted CSV
-          '400':
-            description: Bad request
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    error:
-                      type: string
-                      description: Error message
-  /process_excel:
+  /api/process_excel:
     post:
-      summary: Redact PII data from an Excel file
+      summary: Process an Excel file and redact sensitive data
+      description: This endpoint allows users to upload an Excel file and specify a redaction method to remove sensitive data from the file. The redacted file can be downloaded in the same format as the original file. The endpoint also supports synthetic data generation to replace sensitive data with realistic but fake data.
+      operationId: processExcelFile
       requestBody:
         required: true
         content:
@@ -132,28 +55,56 @@ paths:
                 file:
                   type: string
                   format: binary
-                  description: The Excel file to process
+                  description: The Excel file to be redacted.
                 redaction_method:
                   type: string
-                  enum: ['fixed_string', 'random_value', 'hash']
-                  default: 'fixed_string'
-                  description: The redaction method to use for PII data
+                  enum: [fixed_string, random_value, hash]
+                  description: The method to be used for redacting sensitive data from the file.
+                synthetic_data_generation:
+                  type: string
+                  enum: [true, false]
+                  description: Whether to generate synthetic data to replace sensitive data in the file.
       responses:
-        '200':
-          description: Successfully redacted Excel file
+        "200":
+          description: Success
           content:
             application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
               schema:
                 type: string
                 format: binary
-                description: The redacted Excel file
-        '400':
+        "400":
           description: Bad request
+  /api/process_json:
+    post:
+      summary: Process a JSON file and redact sensitive data
+      description: This endpoint allows users to upload a JSON file and specify a redaction method to remove sensitive data from the file. The redacted file can be downloaded in the same format as the original file. The endpoint also supports synthetic data generation to replace sensitive data with realistic but fake data.
+      operationId: processJsonFile
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The JSON file to be redacted.
+                redaction_method:
+                  type: string
+                  enum: [fixed_string, random_value, hash]
+                  description: The method to be used for redacting sensitive data from the file.
+                synthetic_data_generation:
+                  type: string
+                  enum: [true, false]
+                  description: Whether to generate synthetic data to replace sensitive data in the file.
+      responses:
+        "200":
+          description: Success
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    description: Error message
+                type: string
+                format: binary
+        "400":
+          description: Bad request
