@@ -21,15 +21,15 @@ Interested in trying it out in a pinch? Click [here](here) to try our demo.
 
 ## 🚀 Features
 
-- 🧠 Identify over 60 distinct types of Personally Identifying Information.  See [here](link) for a list of the fields that we currently support.
+- Identify over 60 distinct types of Personally Identifying Information.  See [here](link) for a list of the fields that we currently support.
 - Anonymize, hash, or redact your data
 - Generate synthetic data variants 
-- 🗃️ SaaS platform with fully secure account + file storage can be found [here] (https://codexify.ai)
 
 ### Coming up
 - Support for larger file types
 - HDFS support 
-- Differential Privacy
+- Differential Privacy controls
+- Data connectors  
 - Are we missing anything? Please get in touch! 
 
 ## Quickstart
