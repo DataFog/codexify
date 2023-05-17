@@ -3,7 +3,7 @@ info:
   title: PII Redaction API
   version: '1.0'
 servers:
-  - url: http://localhost:5000/api
+  - url: http://localhost:6000/api
 paths:
   /process_json:
     post:
@@ -64,6 +64,11 @@ paths:
                   enum: ['fixed_string', 'random_value', 'hash']
                   default: 'fixed_string'
                   description: The redaction method to use for PII data
+                synthetic_data_generation:
+                  type: string
+                  enum: ['true', 'false']
+                  default: 'false'
+                  description: Whether to generate synthetic data
       responses:
         '200':
           description: Successfully redacted text file
@@ -101,6 +106,11 @@ paths:
                     enum: ['fixed_string', 'random_value', 'hash']
                     default: 'fixed_string'
                     description: The redaction method to use for PII data
+                  synthetic_data_generation:
+                    type: string
+                    enum: ['true', 'false']
+                    default: 'false'
+                    description: Whether to generate synthetic data
         responses:
           '200':
             description: Successfully redacted CSV file
@@ -138,6 +148,11 @@ paths:
                   enum: ['fixed_string', 'random_value', 'hash']
                   default: 'fixed_string'
                   description: The redaction method to use for PII data
+                synthetic_data_generation:
+                  type: string
+                  enum: ['true', 'false']
+                  default: 'false'
+                  description: Whether to generate synthetic data
       responses:
         '200':
           description: Successfully redacted Excel file
