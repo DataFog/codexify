@@ -19,13 +19,12 @@ In addition to redaction, Codexify's API also supports synthetic data generation
 
 ## Use Cases
 ### Data Analytics/ETL
-Data analytics professionals working with ETL (Extract, Transform, Load) processes can find Codexify's API useful for redacting sensitive data from CSV, Excel, and JSON files. By using the API to redact and replace sensitive data with dummy data, data analytics professionals can ensure that the data is compliant with data protection regulations and that sensitive data is not accidentally or intentionally included in reports or analyses.
+Data analytics professionals working with ETL (Extract, Transform, Load) processes can find Codexify's API useful for redacting sensitive data from CSV, Excel, and JSON files. The API can help ensure that the data is compliant with data protection regulations and that sensitive data is not accidentally or intentionally included in reports or analyses.
 
 Furthermore, the API's support for synthetic data generation can be useful for testing and development purposes, allowing data analytics professionals to work with realistic but safe data. Overall, Codexify's API is a flexible and customizable solution for data redaction that can be tailored to meet the specific needs of each organization and industry.
 
 ### Medical Records/Research
 Codexify has already been shown to  The API can be used to remove personally identifiable information (PII) from medical records and research data, such as patient names, social security numbers, and medical diagnoses, to protect patient privacy and comply with data protection regulations.
-In addition, the API can also be used to generate synthetic medical data for testing and development purposes. This can help to ensure that the data is realistic and representative of real medical data, while protecting patient privacy by replacing sensitive information with dummy data.
 
 ### Finance: Parsing Sensitive Documents
 An important use case for data engineers using Codexify's API is within the context of financial organizations that deal with large volumes of sensitive data. The API can be used to redact personally identifiable information (PII) from financial statements and other documents that may contain sensitive information, such as social security numbers, credit card numbers, and bank account details. This can help to reduce the risk of data breaches and ensure compliance with data protection regulations.
@@ -47,7 +46,7 @@ Codexify can also be used in legal organizations to redact sensitive information
 * Generate synthetic data variants and swap them in place of actual damaging information
 
 ### Coming up
-* Enhancing support for generating *100+* types of synthetic data(!!)
+* Enhancing support for detecting and generating *100+* types of synthetic data(!!)
 * Support for larger file types
 * HDFS support 
 * Differential Privacy controls
