@@ -16,11 +16,11 @@
 
 ## About
 
-Data privacy and security are top priorities for any organization that deals with sensitive data. 
+Data privacy and security are top priorities for any organization that deals with sensitive data. This is especially so in a world where utilizing the incredibile potential of closed-source LLMs like OpenAI's GPT3/3.5/4 means providing training or contextual data to these models: Data that often contains sensitive and proprietary information. 
 
-Codexify's API provides an easy-to-use solution for data stakeholders to redact sensitive data from CSV, Excel, and JSON files. Our API supports a range of redaction methods, including fixed string, random value, and hash functions, to ensure that sensitive data is removed from the files, while preserving the integrity of the remaining data.
+Codexify lets data stakeholders redact sensitive data from CSV, Excel, and JSON files. Our API supports a range of **redaction** methods, including fixed string, random value, and hash functions, to ensure that sensitive data is removed from the files, while preserving the integrity of the remaining data.
 
-In addition to redaction, Codexify's API also supports synthetic data generation to replace sensitive data with realistic but fake data. This feature can be useful when the sensitive data is needed for testing or development purposes, but cannot be used in its original form due to privacy concerns.
+In addition to redaction, Codexify's API also supports **synthetic data generation** to replace sensitive data with realistic but fake data. This feature can be useful when the sensitive data is needed for testing or development purposes, but cannot be used in its original form due to privacy concerns.
 
 ## Use Cases
 ### Data Analytics/ETL
