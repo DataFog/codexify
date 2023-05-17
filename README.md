@@ -35,8 +35,8 @@ Interested in trying it out in a pinch? Click [here](here) to try our demo.
 ## Quickstart
 
 0. Check out the [wiki]()
-1. Download the latest Docker image [Docker image]()
-2. Download the [latest release]()
+1. Get an [API Key](link)
+2. Download the latest Docker image [Docker image]()
 3. Follow the [installation instructions][docs/setup]
 4. [Run][docs/usage] the app
 
