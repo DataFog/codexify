@@ -112,12 +112,12 @@ def find_data_start_row(file, threshold=0.8):
 def api_process_text():
     text = request.form.get("text")
     redaction_method = request.form.get('redaction_method', 'fixed_string')
-    synthetic_data_generation = request.form.get('synthetic_data_generation', 'false')
+    synthetic_data = request.form.get('synthetic_data', 'false')
 
     if not text:
         return jsonify({"error": "Text is required"}), 400
 
-    if synthetic_data_generation.lower() == 'true':
+    if synthetic_data.lower() == 'true':
         # Use NERPii to generate synthetic data.
         # recognizer = NamedEntityRecognizer(text)
         # recognizer.assign_entities_with_presidio(text)
@@ -140,7 +140,7 @@ def api_process_csv():
     filename = secure_filename(file.filename)
     file.save(filename)
     redaction_method = request.form.get('redaction_method', 'fixed_string')
-    synthetic_data_generation = request.form.get('synthetic_data_generation', 'false')
+    synthetic_data = request.form.get('synthetic_data', 'false')
     temp_csv = io.BytesIO()
 
     if 'file' not in request.files:
@@ -148,44 +148,11 @@ def api_process_csv():
 
     # load dataframe
     df = pd.read_csv(filename)
-    
     # Read just the header row
     df_header = pd.read_csv(filename, nrows=0)
     name_columns = ['name', 'fullname', 'full_name', 'legal name', 'full legal name']  # you can customize this list based on your data
 
-    # Check if there is a column that needs to be split into first and last names
-    for column in df_header.columns:
-        if column.lower() in name_columns:
-            # Remember the index of the column
-            # column_index = df.columns.get_loc(column)
-
-            # Split the column into two columns
-            df = split_name(df, column)
-
-            # # Get the names of the new columns
-            # first_name_column = 'first_name'
-            # last_name_column = 'last_name'
-
-            # # Remove the new columns from the end of the DataFrame
-            # first_name = df[first_name_column]
-            # last_name = df[last_name_column]
-            # df = df.drop(columns=[first_name_column, last_name_column])
-
-            # # Convert the DataFrame to a dictionary
-            # df_dict = df.to_dict('list')
-
-            # # Insert the new columns at the right position in the dictionary
-            # df_dict = {key: df_dict[key] for key in list(df_dict.keys())[:column_index]} \
-            #         + {first_name_column: first_name} \
-            #         + {last_name_column: last_name} \
-            #         + {key: df_dict[key] for key in list(df_dict.keys())[column_index:]}
-
-            # # Convert the dictionary back to a DataFrame
-            # df = pd.DataFrame(df_dict)
-
-            break
-
-    if synthetic_data_generation.lower() == 'true':
+    if synthetic_data.lower() == 'true':
         
         recognizer = NamedEntityRecognizer(df)
         recognizer.assign_entities_with_presidio()
@@ -208,7 +175,7 @@ def api_process_csv():
 
     else:
         # Read only the header row
-        header_row = pd.read_csv(file, nrows=0)
+        header_row = pd.read_csv(filename, nrows=0)
         header_redact_flags = []
 
         # Scan the header row to see if the description matches a PII category
@@ -259,7 +226,7 @@ def api_process_excel():
     file.save(filename)
     redaction_method = request.form.get('redaction_method', 'fixed_string')
     temp_excel = io.BytesIO()
-    synthetic_data_generation = request.form.get('synthetic_data_generation', 'false')
+    synthetic_data = request.form.get('synthetic_data', 'false')
 
     data_start_row, num_columns = find_data_start_row(file)
 
@@ -271,7 +238,7 @@ def api_process_excel():
     name_columns = ['name', 'fullname', 'full_name', 'legal name', 'full legal name']  # you can customize this list based on your data
 
 
-    if synthetic_data_generation.lower() == 'true':
+    if synthetic_data.lower() == 'true':
         recognizer = NamedEntityRecognizer(df)
         recognizer.assign_entities_with_presidio()
         recognizer.assign_entities_manually()
@@ -360,14 +327,14 @@ def api_process_json():
     filename = secure_filename(file.filename)
     file.save(filename)
     redaction_method = request.form.get('redaction_method', 'fixed_string')
-    synthetic_data_generation = request.form.get('synthetic_data_generation', 'false')
+    synthetic_data = request.form.get('synthetic_data', 'false')
     temp_json = io.BytesIO()
 
     # Read the JSON file
     data = pd.read_json(filename)
     file.seek(0)
 
-    if synthetic_data_generation.lower() == 'true':
+    if synthetic_data.lower() == 'true':
         # def json_synthetic_data_add(data_dict):
 
 

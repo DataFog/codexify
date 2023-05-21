@@ -26,7 +26,7 @@ paths:
                   type: string
                   enum: [fixed_string, random_value, hash]
                   description: The method to be used for redacting sensitive data from the file.
-                synthetic_data_generation:
+                synthetic_data:
                   type: string
                   enum: [true, false]
                   description: Whether to generate synthetic data to replace sensitive data in the file.
@@ -60,7 +60,7 @@ paths:
                   type: string
                   enum: [fixed_string, random_value, hash]
                   description: The method to be used for redacting sensitive data from the file.
-                synthetic_data_generation:
+                synthetic_data:
                   type: string
                   enum: [true, false]
                   description: Whether to generate synthetic data to replace sensitive data in the file.
@@ -94,7 +94,7 @@ paths:
                   type: string
                   enum: [fixed_string, random_value, hash]
                   description: The method to be used for redacting sensitive data from the file.
-                synthetic_data_generation:
+                synthetic_data:
                   type: string
                   enum: [true, false]
                   description: Whether to generate synthetic data to replace sensitive data in the file.
